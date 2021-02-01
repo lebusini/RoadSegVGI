@@ -6,7 +6,7 @@ import scipy.optimize as optimization
 import sys
 sys.path.append('../')
 sys.path.append('../..')
-from drlse_tools import *
+from utils.drlse_tools import *
 # import scipy.ndimage.filters as filters
 import scipy.ndimage as nd
 from skimage import measure, draw, morphology,color
@@ -22,7 +22,7 @@ import sys
 from skimage.color import rgb2hsv
 from skimage.segmentation import slic,mark_boundaries,find_boundaries
 from shapely.geometry import LineString, Polygon, shape, mapping
-from compute_geodesic import get_geodesic_path
+from utils.compute_geodesic import get_geodesic_path
 from rasterio.features import rasterize
 import drlse
 import sknw
