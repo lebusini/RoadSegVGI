@@ -1,0 +1,6 @@
+样本路径： C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\
+ground truth： C:\python_pycharm_label_test\experiment_data\road_segmentation_reference_results_512
+分割结果路径： C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts
+常用工具路径： C:\python_pycharm_label_test\utils
+	生成Ground Truth mask: C:\python_pycharm_label_test\utils\generate_segmentation_mask_GT.py
+显示最终结果方法：C:\python_pycharm_label_test\compared_experiments\segmentation\experiments_display_all_methods.py
