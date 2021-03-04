@@ -42,8 +42,8 @@ alfa = -3  # coefficient of the weighted area term A(phi)
 epsilon = 1.5  # parameter that specifies the width of the DiracDelta function
 
 c0 = 2
-
-img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\mapbox'
+map_type= sys.argv[1]
+img_dir = os.path.join(r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample',map_type)
 # img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\yahoo'
 # img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\google'
 
@@ -64,7 +64,7 @@ reference_dir = r'C:\python_pycharm_label_test\ground_truth'
 label_single_dir=r'C:\python_pycharm_label_test\experiment_data\lebel_single_line_512'
 # img_results_dir=r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts\yahoo\ours'
 # img_results_dir=r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts\google\ours'
-img_results_dir=r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts\mapbox\ours'
+img_results_dir=os.path.join(r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts',map_type,'ours')
 
 with open(os.path.join(exp_resluts_dir, 'experiment_result.txt'), 'a') as f:
     f.write("\n\n")

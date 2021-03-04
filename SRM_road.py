@@ -8,12 +8,12 @@ import cv2
 import os
 import time
 import datetime
-
+map_type= sys.argv[1]
 # img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\already'
 # img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\yahoo'
-img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\google'
+img_dir = os.path.join(r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample',map_type)
 exp_resluts_dir = r'C:\python_pycharm_label_test\experiment_data\exp_results_512'
-img_results_dir=r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts\SRM'
+img_results_dir=os.path.join(r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts',map_type,'SRM')
 
 
 img_list = os.listdir(img_dir)
