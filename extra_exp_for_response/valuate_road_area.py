@@ -7,7 +7,7 @@ from skimage import measure, draw, morphology
 import numpy as np
 from skimage.color import rgb2hsv
 import time
-from utils import *
+from utils_tools import *
 from scipy import stats, linalg
 from compute_geodesic import get_geodesic_path, normalize_im
 import cv2 as cv

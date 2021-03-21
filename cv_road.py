@@ -3,8 +3,8 @@ from PIL import Image
 from skimage import draw
 from skimage.color import rgb2hsv
 import datetime
-from utils.chanvese import chanvese
-from utils.drlse_tools import *
+from utils_tools.chanvese import chanvese
+from utils_tools.drlse_tools import *
 import time
 import datetime
 import time
@@ -14,8 +14,8 @@ from PIL import Image
 from skimage import draw
 from skimage.color import rgb2hsv
 
-from utils.chanvese import chanvese
-from utils.drlse_tools import *
+from utils_tools.chanvese import chanvese
+from utils_tools.drlse_tools import *
 
 # 初始种子点[153,504] [510,245]
 

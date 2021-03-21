@@ -6,7 +6,7 @@ from shapely.geometry import LineString
 from skimage import draw, color
 from skimage.segmentation import slic, find_boundaries
 
-from utils.drlse_tools import *
+from utils_tools.drlse_tools import *
 
 img_name='216802_216803-100050_100051-18.jpg'
 # from shapely.geometry import LineString

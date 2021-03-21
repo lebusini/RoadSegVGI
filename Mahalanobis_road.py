@@ -8,14 +8,14 @@ from skimage.color import rgb2hsv
 import time
 import datetime
 from scipy import stats, linalg
-from utils.compute_geodesic import get_geodesic_path, normalize_im
+from utils_tools.compute_geodesic import get_geodesic_path, normalize_im
 import cv2 as cv
 from scipy import signal
 import sys
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from multiprocessing import Pool
-from utils.drlse_tools import *
+from utils_tools.drlse_tools import *
 # 初始种子点[153,504] [510,245]
 
 from shapely.geometry import Point, Polygon, LineString

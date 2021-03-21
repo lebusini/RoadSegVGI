@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from numpy.core._multiarray_umath import ndarray
 import scipy.optimize as optimization
-from utils.drlse_tools import *
+from utils_tools.drlse_tools import *
 # import scipy.ndimage.filters as filters
 import scipy.ndimage as nd
 from skimage import measure, draw, morphology,color
 import numpy as np
-from utils import *
+from utils_tools import *
 from scipy.linalg import solve
 from scipy.signal import argrelextrema
 import cv2 as cv
@@ -19,7 +19,7 @@ import sys
 from skimage.color import rgb2hsv
 from skimage.segmentation import slic,mark_boundaries,find_boundaries
 from shapely.geometry import LineString, Polygon, shape, mapping
-from utils.compute_geodesic import get_geodesic_path
+from utils_tools.compute_geodesic import get_geodesic_path
 from rasterio.features import rasterize
 import drlse
 import sknw
@@ -64,7 +64,7 @@ reference_dir = r'C:\python_pycharm_label_test\ground_truth'
 label_single_dir=r'C:\python_pycharm_label_test\experiment_data\lebel_single_line_512'
 # img_results_dir=r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts\yahoo\ours'
 # img_results_dir=r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts\google\ours'
-img_results_dir=os.path.join(r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts',map_type,'ours')
+img_results_dir=os.path.join(r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts')
 
 with open(os.path.join(exp_resluts_dir, 'experiment_result.txt'), 'a') as f:
     f.write("\n\n")
@@ -305,8 +305,9 @@ with open(os.path.join(exp_resluts_dir, 'experiment_result.txt'), 'a') as f:
         final_merge_img=final_merge_img.reshape(slic_img.shape)
         closing_final = cv2.morphologyEx(final_merge_img, cv2.MORPH_CLOSE, kernel)
         closing_final = cv2.medianBlur(closing_final, 9)
-
-        cv2.imwrite(os.path.join(img_results_dir, prename + '.png'), closing_final)
+        save_final_dir_path=os.path.join(img_results_dir,'segmentation',map_type,'graphcut')
+        check_and_create_dir(save_final_dir_path)
+        cv2.imwrite(os.path.join(save_final_dir_path, prename + '.png'), closing_final)
 
         end = time.time()
         dur_time = end - start

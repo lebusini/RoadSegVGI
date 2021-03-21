@@ -8,12 +8,15 @@ import cv2
 import os
 import time
 import datetime
+
+from utils_tools.utils import check_and_create_dir
+
 map_type= sys.argv[1]
 # img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\already'
 # img_dir = r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample\yahoo'
 img_dir = os.path.join(r'C:\python_pycharm_label_test\compared_experiments\segmentation\experiment_sample',map_type)
 exp_resluts_dir = r'C:\python_pycharm_label_test\experiment_data\exp_results_512'
-img_results_dir=os.path.join(r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts',map_type,'SRM')
+img_results_dir=os.path.join(r'C:\python_pycharm_label_test\experiment_data\exp_results_512\compared_experiment_resluts')
 
 
 img_list = os.listdir(img_dir)
@@ -57,8 +60,9 @@ with open(os.path.join(exp_resluts_dir, 'experiment_result.txt'), 'a') as f:
             index_area=np.argsort(region_area_list)
             binary_img[road_binary_regions[index_area[-1]].coords[:, 0],road_binary_regions[index_area[-1]].coords[:, 1]]=255
 
-
-        cv2.imwrite(os.path.join(img_results_dir, prename + '.png'), binary_img)
+        save_final_dir_path=os.path.join(img_results_dir,'segmentation',map_type,'SRM')
+        check_and_create_dir(save_final_dir_path)
+        cv2.imwrite(os.path.join(save_final_dir_path, prename + '.png'), binary_img)
         end = time.time()
         dur_time = end - start
         f.write("%s        %d   \n" % (prename, dur_time))
